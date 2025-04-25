@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Setup</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Add some specific styles for the setup page */
+        body { padding-top: 2rem; padding-bottom: 4rem; }
+        label { font-weight: 600; margin-bottom: 0.5rem; display: block; }
+        input[type="text"], input[type="url"], input[type="email"], textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            background-color: white; /* Ensure visibility */
+            color: black;
+        }
+        textarea { min-height: 100px; }
+        .section-divider { border-top: 1px solid #e5e5e5; margin-top: 2rem; padding-top: 2rem; }
+        .image-preview { max-width: 200px; max-height: 200px; margin-top: 1rem; border: 1px solid #ccc; display: none; }
+        button { margin-top: 1.5rem; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center">Portfolio Setup</h1>
+        <p class="text-center text-gray-600 mb-8">Fill in the details below to customize your portfolio. Click "Save Configuration" at the bottom when done.</p>
+
+        <form id="setupForm">
+            <!-- General Info -->
+            <h2 class="text-2xl font-semibold mb-4">General</h2>
+            <div>
+                <label for="navAcronym">Navbar Acronym (e.g., JD)</label>
+                <input type="text" id="navAcronym" name="navAcronym" required>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="section-divider">
+                <h2 class="text-2xl font-semibold mb-4">Hero Section</h2>
+                <div>
+                    <label for="heroName">Your Name</label>
+                    <input type="text" id="heroName" name="heroName" required>
+                </div>
+                <div>
+                    <label for="heroTitle">Your Title (e.g., Full Stack Developer)</label>
+                    <input type="text" id="heroTitle" name="heroTitle" required>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="section-divider">
+                <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+                <div>
+                    <label for="aboutText1">About Me - Paragraph 1</label>
+                    <textarea id="aboutText1" name="aboutText1" required></textarea>
+                </div>
+                <div>
+                    <label for="aboutText2">About Me - Paragraph 2</label>
+                    <textarea id="aboutText2" name="aboutText2" required></textarea>
+                </div>
+                <div>
+                    <label for="profileImage">Profile Photo</label>
+                    <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                    <img id="profileImagePreview" class="image-preview" alt="Image Preview"/>
+                    <p class="text-sm text-gray-500 mt-1">Upload a square or portrait photo. It will be displayed in a 4:5 aspect ratio.</p>
+                </div>
+                 <h3 class="text-xl font-semibold mb-3 mt-4">Stats</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                         <label for="statYears">Years Experience (Number)</label>
+                         <input type="number" id="statYears" name="statYears" required>
+                    </div>
+                    <div>
+                         <label for="statProjects">Projects Completed (Number)</label>
+                         <input type="number" id="statProjects" name="statProjects" required>
+                    </div>
+                    <div>
+                         <label for="statClients">Happy Clients (Number)</label>
+                         <input type="number" id="statClients" name="statClients" required>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Skills Section (Simplified: Edit existing 4) -->
+            <div class="section-divider">
+                 <h2 class="text-2xl font-semibold mb-4">Skills (Edit First 4)</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Skill 1</h3>
+                        <label for="skillName1">Name</label><input type="text" id="skillName1" name="skillName1">
+                        <label for="skillLevel1">Level (e.g., Advanced)</label><input type="text" id="skillLevel1" name="skillLevel1">
+                        <label for="skillIcon1">Font Awesome Icon Class (e.g., fab fa-react)</label><input type="text" id="skillIcon1" name="skillIcon1">
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Skill 2</h3>
+                        <label for="skillName2">Name</label><input type="text" id="skillName2" name="skillName2">
+                        <label for="skillLevel2">Level</label><input type="text" id="skillLevel2" name="skillLevel2">
+                        <label for="skillIcon2">Icon Class</label><input type="text" id="skillIcon2" name="skillIcon2">
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Skill 3</h3>
+                        <label for="skillName3">Name</label><input type="text" id="skillName3" name="skillName3">
+                        <label for="skillLevel3">Level</label><input type="text" id="skillLevel3" name="skillLevel3">
+                        <label for="skillIcon3">Icon Class</label><input type="text" id="skillIcon3" name="skillIcon3">
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Skill 4</h3>
+                        <label for="skillName4">Name</label><input type="text" id="skillName4" name="skillName4">
+                        <label for="skillLevel4">Level</label><input type="text" id="skillLevel4" name="skillLevel4">
+                        <label for="skillIcon4">Icon Class</label><input type="text" id="skillIcon4" name="skillIcon4">
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Projects Section (Simplified: Edit existing 3) -->
+             <div class="section-divider">
+                 <h2 class="text-2xl font-semibold mb-4">Featured Projects (Edit First 3)</h2>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Project 1</h3>
+                        <label for="projectImage1">Image URL</label><input type="url" id="projectImage1" name="projectImage1">
+                        <label for="projectTitle1">Title</label><input type="text" id="projectTitle1" name="projectTitle1">
+                        <label for="projectDesc1">Description</label><textarea id="projectDesc1" name="projectDesc1"></textarea>
+                        <label for="projectLink1">Project Link URL</label><input type="url" id="projectLink1" name="projectLink1">
+                    </div>
+                     <div>
+                        <h3 class="text-lg font-medium mb-2">Project 2</h3>
+                        <label for="projectImage2">Image URL</label><input type="url" id="projectImage2" name="projectImage2">
+                        <label for="projectTitle2">Title</label><input type="text" id="projectTitle2" name="projectTitle2">
+                        <label for="projectDesc2">Description</label><textarea id="projectDesc2" name="projectDesc2"></textarea>
+                        <label for="projectLink2">Project Link URL</label><input type="url" id="projectLink2" name="projectLink2">
+                    </div>
+                     <div>
+                        <h3 class="text-lg font-medium mb-2">Project 3</h3>
+                        <label for="projectImage3">Image URL</label><input type="url" id="projectImage3" name="projectImage3">
+                        <label for="projectTitle3">Title</label><input type="text" id="projectTitle3" name="projectTitle3">
+                        <label for="projectDesc3">Description</label><textarea id="projectDesc3" name="projectDesc3"></textarea>
+                        <label for="projectLink3">Project Link URL</label><input type="url" id="projectLink3" name="projectLink3">
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Experience Section (Simplified: Edit existing 2) -->
+            <div class="section-divider">
+                 <h2 class="text-2xl font-semibold mb-4">Experience (Edit First 2)</h2>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Experience 1</h3>
+                        <label for="expTitle1">Job Title</label><input type="text" id="expTitle1" name="expTitle1">
+                        <label for="expCompany1">Company</label><input type="text" id="expCompany1" name="expCompany1">
+                        <label for="expDates1">Dates (e.g., 2020 - Present)</label><input type="text" id="expDates1" name="expDates1">
+                        <label for="expDesc1">Description</label><textarea id="expDesc1" name="expDesc1"></textarea>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Experience 2</h3>
+                        <label for="expTitle2">Job Title</label><input type="text" id="expTitle2" name="expTitle2">
+                        <label for="expCompany2">Company</label><input type="text" id="expCompany2" name="expCompany2">
+                        <label for="expDates2">Dates</label><input type="text" id="expDates2" name="expDates2">
+                        <label for="expDesc2">Description</label><textarea id="expDesc2" name="expDesc2"></textarea>
+                    </div>
+                 </div>
+            </div>
+
+             <!-- Certifications Section (Simplified: Edit existing 2) -->
+             <div class="section-divider">
+                 <h2 class="text-2xl font-semibold mb-4">Certifications (Edit First 2)</h2>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Certification 1</h3>
+                        <label for="certName1">Name</label><input type="text" id="certName1" name="certName1">
+                        <label for="certIssuer1">Issuer</label><input type="text" id="certIssuer1" name="certIssuer1">
+                        <label for="certDate1">Date Issued (e.g., 2021)</label><input type="text" id="certDate1" name="certDate1">
+                     </div>
+                     <div>
+                        <h3 class="text-lg font-medium mb-2">Certification 2</h3>
+                        <label for="certName2">Name</label><input type="text" id="certName2" name="certName2">
+                        <label for="certIssuer2">Issuer</label><input type="text" id="certIssuer2" name="certIssuer2">
+                        <label for="certDate2">Date Issued</label><input type="text" id="certDate2" name="certDate2">
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Contact / Social Links -->
+            <div class="section-divider">
+                <h2 class="text-2xl font-semibold mb-4">Social Links</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="githubLink">GitHub Profile URL</label>
+                        <input type="url" id="githubLink" name="githubLink">
+                    </div>
+                    <div>
+                        <label for="linkedinLink">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedinLink" name="linkedinLink">
+                    </div>
+                    <div>
+                        <label for="twitterLink">Twitter Profile URL (Optional)</label>
+                        <input type="url" id="twitterLink" name="twitterLink">
+                    </div>
+                 </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors text-lg font-medium mr-4">Save Configuration</button>
+                <button type="button" id="resetButton" class="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition-colors text-lg font-medium">Reset to Defaults</button>
+            </div>
+            <div id="statusMessage" class="mt-4 text-center"></div>
+        </form>
+    </div>
+
+    <script src="setup.js"></script>
+</body>
+</html> 
